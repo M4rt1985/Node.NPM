@@ -11,9 +11,10 @@
     "minify:css": "echo \"- Minifying CSS\" && cleancss assets/css/main.css -o dist/public/css/main.min.css",
     "watch": "watch \"npm run minify:js && npm run minify:css \" assets/scripts/ assets/css/",
     "watch:sass": "watch \" npm run sass \" assets/sass-scss/ ",
-    "build": "echo \"=> building\" && npm run test -s && npm run minify:js -s && npm run minify:css -s && npm run watch",
+    "build": "echo \"=> building\" && npm run test -s && npm run minify:js -s && npm run minify:css -s && npm run execute:watches",
     "browsersync": "cd dist/public/ && browser-sync start --server --files \"C:/test-projects/project1/buildtool/dist/public/\" ",
-    "sass": " node-sass assets/sass-scss/main.scss assets/css/main.css"
+    "sass": " node-sass assets/sass-scss/main.scss assets/css/main.css",
+    "execute:watches": "parallelshell \"npm run watch\" \"npm run watch:sass\" \"npm run browsersync\" "
   },
   "author": "",
   "license": "ISC",

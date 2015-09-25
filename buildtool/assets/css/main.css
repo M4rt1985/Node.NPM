@@ -15,7 +15,7 @@ article {
   text-align: center; }
 
 .article.article--top {
-  border: 4px red solid; }
+  border: 4px red dotted; }
 
 .article .article__header .article__header--h2 {
   color: green; }
