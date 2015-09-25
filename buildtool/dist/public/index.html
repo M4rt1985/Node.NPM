@@ -3,7 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>NPM as a build tool</title>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/angular.min.js"></script>
+
+	<script src="js/articles.js"></script>
+
     <link href='css/main.min.css' rel='stylesheet'>
+    <link href='css/components.min.css' rel='stylesheet'>
+
   </head>
   <body>
 
@@ -24,24 +32,31 @@
 		</nav>
 	</header>
 
-    <article class="article article--top">
-    	<header class="article__header">
-    		<h2 class="article__header--h2">NPM as a build tool!</h2>
-    	</header>
-    	<div class="article__body">
-			
-			<p class="article__body--p">
-				I am the body of the article
-			</p>
+	<section ng-app="articles" ng-controller="articlesCtrl">
+	    <article class="article article--top" ng-repeat="a in articles">
 
-    	</div>
-    	<footer class="article__footer">
-    		
-    		<h2 class="article__footer--h2"> Build Tool Footer </h2>
+	    	<header class="article__header">
 
-    	</footer>
-	</article
+	    		<h2 class="article__header--h2"> {{ a.title }} </h2>
+
+	    	</header>
+	    	<div class="article__body">
+				
+				<p class="article__body--p">
+					{{ a.body }}
+				</p>
+	    	</div>
+	    	<footer class="article__footer">
+	    		
+	    		<h2 class="article__footer--h2"> {{ a.footer }} </h2>
+
+	    	</footer>
+		</article>
+	</section>
 
     <script src='js/main.min.js'></script>
+
+    
+    
   </body>
 </html>
