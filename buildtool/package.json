@@ -1,0 +1,28 @@
+{
+  "name": "buildtool",
+  "version": "1.0.0",
+  "description": "npm as a build tool",
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo \"=> linting\" && jshint assets/scripts/",
+    "pretest": "npm run lint -s",
+    "test": "echo \"=> testing\" && mocha test/",
+    "minify:js": "echo \"- Minifying Javascript\" && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
+    "minify:css": "echo \"- Minifying CSS\" && cleancss assets/css/main.css -o dist/public/css/main.min.css",
+    "watch": "watch \"npm run minify:js && npm run minify:css \" assets/scripts/ assets/css/",
+    "watch:sass": "watch \" npm run sass \" assets/sass-scss/ ",
+    "build": "echo \"=> building\" && npm run test -s && npm run minify:js -s && npm run minify:css -s && npm run watch",
+    "browsersync": "cd dist/public/ && browser-sync start --server --files \"C:/test-projects/project1/buildtool/dist/public/\" ",
+    "sass": " node-sass assets/sass-scss/main.scss assets/css/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css": "^3.4.4",
+    "http-server": "^0.8.4",
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.3",
+    "uglify-js": "^2.4.24",
+    "watch": "^0.16.0"
+  }
+}

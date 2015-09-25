@@ -1,0 +1,51 @@
+html{
+	width:100%;
+}
+body{
+	width:100%;
+	font-size: 1.5em;
+
+}
+h2{
+	color:blue;
+
+}
+article{
+	width:50%;
+	margin:0 auto;
+	display: block;
+	text-align: center;
+
+}
+
+.article{
+	
+	&.article--top{
+		border:4px red solid;
+
+	}
+
+	.article__header{
+	
+		.article__header--h2{
+			color:green;
+		}
+
+	}
+
+	.article__body{
+		border: 1px black solid;
+	}
+
+	.article__body--p{
+		font-style: italic;
+	}
+
+	.article__footer{
+		.article__footer--h2{
+			color:blue;
+		}
+	}
+	
+}
+
