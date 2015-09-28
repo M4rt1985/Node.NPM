@@ -1,14 +1,29 @@
+$HeadingColor: red;
+
+@mixin BorderLeftBlackSolid{
+	border-left: 1px solid #000;
+}
+@mixin BorderRightBlackSolid{
+	border-right: 1px solid #000;
+}
+@mixin BorderBottomBlackSolid{
+	border-bottom: 1px solid #000;
+}
+@mixin BorderTopBlackSolid{
+	border-top: 1px solid #000;
+}
+
 .article{
 
 	&.article--top{
-		border:4px red dotted;
+		border:4px blue dotted;
 		position:relative;
 	}
 
 	.article__header{
 	
 		.article__header--h2{
-			color:green;
+			color: $HeadingColor;
 		}
 
 	}
@@ -24,7 +39,7 @@
 
 	.article__footer{
 		.article__footer--h2{
-			color:red;
+			color: lighten( $HeadingColor, 20%);
 
 		}
 	}
@@ -42,6 +57,7 @@
 		background-color: lightblue;
 		right:-50%;
 		overflow:hidden;
+
 	}
 
 	&:before{
@@ -65,12 +81,33 @@
 		text-align:center;
 		width: calc(96% / 5);
 
+
+		.navigation__ul--second-level{
+			position: absolute;
+			background-color: #fff;
+			padding-left: 0;
+			width: 93%;
+    		left: 4%;
+    		z-index:1;
+			@include BorderLeftBlackSolid;
+			@include BorderRightBlackSolid;
+			@include BorderBottomBlackSolid;
+
+			&.open{
+				-webkit-animation: openDropDown 4s ease-in-out;
+				animation: openDropDown 4s ease-in-out;
+				top:90%;
+				/*display:block;*/
+			}
+		}
+
 	}
 
 	position:relative;
 	height:60px;
 	background-color: lightblue;
 	margin-top: -13px;
+	
 }
 
 .logo{
@@ -89,4 +126,20 @@
 	height:82%
 
 	
+}
+
+.closed{
+	display: none;
+	top: -327%;
+}
+
+@-webkit-keyframes openDropDown{
+
+	from{display: none;}
+	top{display:block; top:90%;}
+}
+@keyframes openDropDown{
+
+	from{display: none;}
+	top{display:block;}
 }

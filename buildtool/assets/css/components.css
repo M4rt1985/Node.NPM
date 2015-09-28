@@ -1,9 +1,9 @@
 .article.article--top {
-  border: 4px red dotted;
+  border: 4px blue dotted;
   position: relative; }
 
 .article .article__header .article__header--h2 {
-  color: green; }
+  color: #000099; }
 
 .article .article__body {
   border-top: 1px black dotted;
@@ -13,7 +13,7 @@
   font-style: italic; }
 
 .article .article__footer .article__footer--h2 {
-  color: red; }
+  color: blue; }
 
 .navigation {
   position: relative;

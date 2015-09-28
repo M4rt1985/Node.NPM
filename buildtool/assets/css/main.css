@@ -10,9 +10,9 @@ h2 {
 
 article {
   width: 50%;
+  text-align: center;
   margin: 0 auto;
-  display: block;
-  text-align: center; }
+  display: block; }
 
 nav {
   width: 50%;
